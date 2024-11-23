@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev By BODA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background: linear-gradient(145deg, #00204a, #003366);
+            color: #fff;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #fff;
+            background-color: #ffd700;
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar .logo {
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .navbar .logo span {
+            color: #ffd700;
+        }
+
+        .navbar .menu {
+            display: flex;
+            gap: 15px;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background: linear-gradient(145deg, #003366, #00204a);
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 1px 4px rgba(255, 255, 255, 0.1) inset;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        button img {
+            width: 350px;
+            height: auto;
+        }
+
+        button span {
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(255, 255, 255, 0.2) inset;
+            background: linear-gradient(145deg, #00204a, #003366);
+        }
+
+        .footer {
+            background-color: #00204a;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            h1,
+            h2 {
+                font-size: 18px;
+            }
+
+            button {
+                background: linear-gradient(145deg, #003366, #00204a);
+                color: #fff;
+                border: none;
+                padding: 15px 30px;
+                font-size: 18px;
+                cursor: pointer;
+                border-radius: 50px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 1px 4px rgba(255, 255, 255, 0.1) inset;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            button img {
+                width: 35px;
+                height: auto;
+            }
+
+            button span {
+                font-size: 18px;
+                font-weight: bold;
+                font-family: 'Arial', sans-serif;
+                text-transform: uppercase;
+            }
+
+            button:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(255, 255, 255, 0.2) inset;
+                background: linear-gradient(145deg, #00204a, #003366);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+    </div>
+    <h1>
+        <%= PRODUCT_NAME %>
+    </h1>
+    <h2>Price: <%= PRICE_PRODUCT %>$</h2>
+    <form action="/pay" method="post">
+        <button type="submit">
+            <img src="./paypal.png" alt="Pay Icon">
+            <span>Buy Now</span>
+        </button>
+    </form>
+    <div class="footer">
+        Copyright &copy; 2024 Dev By BODA
+    </div>
+</body>
+
+</html>
